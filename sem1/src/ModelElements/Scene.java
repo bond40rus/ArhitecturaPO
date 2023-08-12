@@ -1,19 +1,27 @@
 package ModelElements;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Scene {
-    int id;
-    ArrayList<PoligonalModel> models = new ArrayList<>();
-    ArrayList<Flash> flashes = new ArrayList<>();
+    public int Id;
+    public List<PoligonalModel> Models;
+    public List<Flash> Flashes;
+    public List<Camera> Cameras;
 
-    public Object method1(Object in1) {
-        return in1;
+    public Scene(int id, List<PoligonalModel> models, List<Flash> flashes, List<Camera> cameras) throws Exception {
+        Id = id;
+        if (!models.isEmpty())
+            Models = models;
+        else throw new Exception("Должна быть хотя бы одна модель");
+
+        Flashes = flashes;
+        if (!cameras.isEmpty())
+            Cameras = cameras;
+        else throw new Exception("Должна быть хотя бы одна камера");
+
+
+
+
     }
-
-    public Object method2(Object in1, Object in2) {
-        Object ret = new Object();
-        return ret;
-    }
-
 }
